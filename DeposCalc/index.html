@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deposit Calculator</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<!--<link href="/assets/node_modules/air-datepicker/air-datepicker.css" rel="stylesheet" type="text/css">-->
+</head>
+<body>
+    <div class="hedader">
+        <img src="assets/logo.png">
+        <h3>Deposit Calculator</h3>
+    </div>
+    <div class="content">
+        <br>
+        <h1>Депозитный калькулятор</h1>
+        <h4>Калькулятор депозитов позволяет рассчитать ваши доходы после внесения суммы на счет в банке по определенному тарифу</h4>
+        <form id="mainForm">
+            <div class="form-div">
+                <input class="input-text" id="date" name="date" type="text" required>
+                <label class="input-info dynam-label" for="date">Дата открытия</label>
+                <div class="errorDate"></div>
+            </div>
+            <div class="form-div">
+                <input class="input-text" id="time" name="time" type="number" pattern="^[ 0-9]+$" required>
+                <label class="input-info dynam-label" for="time">Срок вклада</label>
+                
+                <div class="errorTime"></div>
+            </div>
+            <div class="form-div">
+                <input class="input-text" id="value" name="value" type="number" pattern="^[ 0-9]+$" required>
+                <label class="input-info dynam-label" for="value">Сумма вклада</label>
+                <div class="errorValue"></div>
+            </div>
+            <div class="form-div">
+                <input class="input-text" id="percent" name="percent" type="number" pattern="^[ 0-9]+$" value="10" required>
+                <label class="input-info dynam-label" for="percent">Процентная ставка, % годовых</label>
+                <div class="errorPercent"></div>
+            </div>
+            <div class="form-div checkbox-div">
+                <input class="checkbox" id="check" type="checkbox" > 
+                <label class="checkbox-text input-info" for="check">Ежемесячное пополнение вклада </label required>
+            </div>
+            <div class="form-div">
+                <input class="input-text hidden" id="replenishment" name="replenishment" type="number" value="0" pattern="^[ 0-9]+$" required>
+                <label class="hidden input-info dynam-label" for="replenishment">Сумма пополнения вклада</label>
+                <div class="errorRepl"></div>
+            </div>
+            <button >Рассчитать</button>
+        </form>
+        <div class="mess">
+            <hr/>
+            <p class="mess-text"> Сумма к выплате</p>
+            <p class="mess-sum">&#8381<span class="mess-span"></span> </p>
+        </div>
+    </div>
+    
+    
+    <script src="assets/node_modules/jquery/dist/jquery.min.js"></script>
+    <!--<script src="assets/node_modules/air-datepicker/air-datepicker.js"></script>-->
+    <script src="assets/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="assets/node_modules/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="script.js"></script>
+</body> 
+</html>
